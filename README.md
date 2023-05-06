@@ -3,6 +3,9 @@ Raspberry Pi Pico Wと光センサーでインターホンの監視を行いLINE
 
 ![img](raspi-pico-w-interphone-notify.png)
 
+# 環境
+CircuitPythonがRaspberry Pi Pico Wにセットアップされている環境を前提としている。
+
 # 材料
 - Raspberry Pi Pico W
 - 10kΩ抵抗
@@ -12,7 +15,11 @@ Raspberry Pi Pico Wと光センサーでインターホンの監視を行いLINE
 - ピンヘッダ
 
 # 初期設定
-`settings.toml`の環境変数を各自の環境に合わせて変更する
+`settings.toml`の環境変数を各自の環境に合わせて変更する。  
+以下のファイル、フォルダーをRaspberry Pi Pico W上に配置する。
+-  `*.py`
+- `settings.toml`
+- `lib`
 
 # 参考
 [ラズパイピコと光センサー総額1150円で作る会議室のモニタリングシステム](https://news.mynavi.jp/techplus/article/zeropython-80/)

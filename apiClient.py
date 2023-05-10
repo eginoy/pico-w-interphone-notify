@@ -14,6 +14,6 @@ def pushToLine(cnPool,message):
     data = {
         'message': message
     }
-    res = requests.request(method='POST',url = url,data = data,headers=headers)
+    requests.request(method='POST',url = url,data = data,headers=headers)
     # debug
     # print(res)

@@ -17,7 +17,6 @@ def get_voltage(pin):
 
 while True:
     time.sleep(1)
-    v = get_voltage(adc2)
-    print(v)
-    if v > notifySensorThreshold:
-      apiClient.pushToLine(cnPool,'インターホンが押されました')
+    #print(v)
+    if get_voltage(adc2) > notifySensorThreshold:
+        apiClient.pushToLine(cnPool,'インターホンが押されました')

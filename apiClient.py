@@ -4,8 +4,7 @@ import adafruit_requests
 
 class notify:
   def __init__(self,socket):
-    self.socket = socket
-    self.client = adafruit_requests.Session(self.socket,ssl.create_default_context())
+    self.client = adafruit_requests.Session(socket,ssl.create_default_context())
   
   def pushToLine(self,message):
     headers = {

@@ -15,8 +15,6 @@ def run():
 
     print("Connected to WiFi")
 
-    pool = socketpool.SocketPool(wifi.radio)
-
     #  prints MAC address to REPL
     print("My MAC addr:", [hex(i) for i in wifi.radio.mac_address])
 
@@ -27,4 +25,4 @@ def run():
     #ipv4 = ipaddress.ip_address("8.8.4.4")
     #print("Ping google.com: %f ms" % (wifi.radio.ping(ipv4)*1000))
 
-    return pool
+    return socketpool.SocketPool(wifi.radio)

@@ -2,18 +2,20 @@ import os
 import ssl
 import adafruit_requests
 
-
-def pushToLine(cnPool,message):
-    requests = adafruit_requests.Session(cnPool,ssl.create_default_context())
-    url = f'https://notify-api.line.me/api/notify'
-    token = os.getenv('LINE_TOKEN')
+class notify:
+  def __init__(self,socket):
+    self.socket = socket
+    self.client = adafruit_requests.Session(self.socket,ssl.create_default_context())
+  
+  def pushToLine(self,message):
     headers = {
-        'Authorization':f'Bearer {token}',
+        'Authorization':f'Bearer {os.getenv('LINE_TOKEN')}',
         'Content-Type': 'application/x-www-form-urlencoded'
     }
     data = {
         'message': message
     }
-    requests.request(method='POST',url = url,data = data,headers=headers)
-    # debug
-    # print(res)
+    try:
+      self.client.request(method='POST',url = 'https://notify-api.line.me/api/notify',data = data,headers=headers)
+    except:
+      pass

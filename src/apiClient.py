@@ -11,7 +11,7 @@ class notify:
     try:
       self.client.request(method='GET',url = 'https://www.google.com/');
     except:
-      # 疎通確認できなければ再起動(ハードリセット)してシステムの拡幅を試みる。(起動時にネットワーク接続を行っているので)
+      # 疎通確認できなければ再起動(ハードリセット)してシステムの回復を試みる。(起動時にネットワーク接続を行っているので)
       # https://learn.adafruit.com/circuitpython-essentials/circuitpython-resetting#hard-reset-3087083
       microcontroller.reset();
 

@@ -22,6 +22,7 @@ def get_voltage(pin):
 
 
 while True:
+    notify.requestTest()
     time.sleep(1)
     # 光センサーの値。センサーを光で照らしたり手で覆ったりすると値が変わるのでこの値を参考にしてsettings.tomlのNOTIFY_SENSOR_THRESHOLDを調整すること。
     print(get_voltage(adc2))

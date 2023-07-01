@@ -17,6 +17,7 @@ def get_voltage(pin):
     return (pin.value * 3.3) / 65536
 
 while True:
+    notify.requestTest()
     time.sleep(1)
     #print(v)
     if get_voltage(adc2) > notifySensorThreshold:
